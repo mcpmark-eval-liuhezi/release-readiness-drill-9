@@ -1,0 +1,16 @@
+name: Audit Drill
+
+on:
+  push:
+    branches:
+      - audit/axios-security
+  pull_request:
+
+jobs:
+  drill:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Intentional drill failure
+        run: |
+          echo "intentional drill failure"
+          exit 1
